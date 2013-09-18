@@ -26,8 +26,8 @@ if(isset($_GET['ajax'])) {
       if($allow_every=='hour') { $Query = mysql_query("SELECT z_ip FROM zelles_lotto WHERE z_ip='$ip' and z_day='$day' and z_hour='$hour'"); }
       else { $Query = mysql_query("SELECT z_ip FROM zelles_lotto WHERE z_ip='$ip' and z_day='$day'"); }
       if(mysql_num_rows($Query)===0) {
-         if($allow_every=='hour') { $Query = mysql_query("SELECT z_address FROM zelles_lotto WHERE z_address='$ip' and z_day='$day' and z_hour='$hour'"); }
-         else { $Query = mysql_query("SELECT z_address FROM zelles_lotto WHERE z_address='$ip' and z_day='$day'"); }
+         if($allow_every=='hour') { $Query = mysql_query("SELECT z_address FROM zelles_lotto WHERE z_address='$address' and z_day='$day' and z_hour='$hour'"); }
+         else { $Query = mysql_query("SELECT z_address FROM zelles_lotto WHERE z_address='$address' and z_day='$day'"); }
          if(mysql_num_rows($Query)===0) {
             $random = rand(1,2);
             if($random==1){
